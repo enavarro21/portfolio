@@ -79,7 +79,7 @@ main {
 // Use CSS Grid to align About Page
 .about-info {
   display: grid;
-  gap: 30px;
+  gap: 0.8rem;
   grid-template-areas:
     "bioimage bio bio"
     "job1 job2 job3";
@@ -118,6 +118,50 @@ main {
   }
 }
 
+// Projects
+.projects {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+// Extend the .btn class into the -dark and -light class
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}
+
 #main-footer {
   text-align: center;
   padding: 1rem;
@@ -125,7 +169,6 @@ main {
   color: set-text-color($primary-color);
   height: 60px;
 }
-
 
 // Want Media queries to run after SCSS
 @import "mobile";

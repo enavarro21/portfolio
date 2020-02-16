@@ -1,7 +1,16 @@
-// Smartphones
-@include mediaSm {
-  main#home h1 {
-    margin-top: 10vh;
+// Widescreens
+@include mediaXl {
+  // Change grid template areas for Projects page
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  } 
+}
+
+// Desktops and laptops
+@include mediaLg {
+  // Change grid template areas for Projects page
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -10,42 +19,42 @@
   main {
     align-items: center;
     text-align: center;
-
+    
     .lg-heading {
       line-height: 1;
       margin-bottom: 1rem;
     }
   }
-
+  
   ul.menu-nav, div.menu-branding {
     float: none;
     width: 100%;
     min-height: 0;
-
+    
     // Items come in from left and right on Show
     &.show {
       transform: translate3d(0, 0, 0);
     }
   }
-
+  
   .menu-nav {
     height: 75vh;
     transform: translate3d(100%, 0, 0);
     font-size: 24px;
   }
-
+  
   .menu-branding {
     height: 25vh;
     transform: translate3d(-100%, 0, 0);
-
+    
     .portrait {
       background: url('../img/portrait_small.jpg');
       height: 150px;
       width: 150px;
     }
   }
-
-  // Change grid template areas
+  
+  // Change grid template areas for About page
   .about-info {
     grid-template-areas:
     'bioimage'
@@ -53,19 +62,27 @@
     'job1'
     'job2'
     'job3';
-
+    
     grid-template-columns: 1fr;
+  }
+  
+  // Change grid template areas for Projects page
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-// Desktops and laptops
-@include mediaLg {
+// Smartphones
+@include mediaSm {
+  main#home h1 {
+    margin-top: 10vh;
+  }
+  
+  // Change grid template areas for Projects page
+  .projects {
+    grid-template-columns: 1fr;
+  }
 }
-
-// Widescreens
-@include mediaXl {
-}
-
 
 
 
