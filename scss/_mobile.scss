@@ -75,10 +75,17 @@
 
 // Smartphones
 @include mediaSm {
-  main#home h1 {
-    margin-top: 10vh;
-  }
+  main {
+    padding: 2rem;
+    #home h1 {
+      margin-top: 10vh;
+    }
 
+    .lg-heading {
+      margin-top: 1rem;
+      font-size: 4.5rem;
+    }
+  }
   // Change grid template areas for Projects page
   .projects {
     grid-template-columns: 1fr;

@@ -26,7 +26,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
+  opacity: .95;
   visibility: hidden; }
   .menu.show {
     visibility: visible; }
@@ -57,7 +57,7 @@
     .menu-branding .portrait {
       width: 250px;
       height: 250px;
-      background: url("../img/portrait.jpg");
+      background: center/contain no-repeat url("../img/portrait.jpg");
       border-radius: 50%;
       border: solid 3px #ff5722; }
   .menu .nav-item {
@@ -117,7 +117,7 @@ h3 {
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
-    font-size: 6rem;
+    font-size: 5.5rem;
     font-weight: 500; }
   h1.sm-heading,
   h2.sm-heading,
@@ -142,12 +142,13 @@ main {
   padding: 4rem;
   min-height: calc(100vh - 60px); }
   main .icons {
-    margin-top: 1rem; }
+    margin-top: 1rem;
+    padding: .5rem; }
     main .icons a {
-      padding: 0.5rem; }
+      padding: 0.5rem;
+      transition: all 0.7s ease-out; }
       main .icons a:hover {
-        color: #ff5722;
-        transition: all 0.7s ease-out; }
+        color: #ff5722; }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -155,7 +156,7 @@ main {
 
 .about-info {
   display: grid;
-  gap: 0.8rem;
+  gap: 32px;
   grid-template-areas: "bioimage bio bio" "job1 job2 job3";
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
@@ -165,7 +166,7 @@ main {
     border: #ff5722 3px solid; }
   .about-info .bio {
     grid-area: bio;
-    font-size: 1.4rem; }
+    font-size: 1.5rem; }
   .about-info .job-1 {
     grid-area: job1; }
   .about-info .job-2 {
@@ -174,6 +175,7 @@ main {
     grid-area: job3; }
   .about-info .job {
     background: #3b4550;
+    text-align: center;
     padding: 0.5rem;
     border-bottom: #ff5722 5px solid; }
 
@@ -273,7 +275,12 @@ main {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; }
+  main {
+    padding: 2rem; }
+    main #home h1 {
+      margin-top: 10vh; }
+    main .lg-heading {
+      margin-top: 1rem;
+      font-size: 4.5rem; }
   .projects {
     grid-template-columns: 1fr; } }
